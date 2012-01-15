@@ -41,3 +41,6 @@ function! DBextPostResult(db_type, buf_nr)
 		set syntax=mysql
 	endif
 endfunction
+
+" support for 256 color regardless of the termname
+set t_Co=256
