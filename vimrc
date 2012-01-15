@@ -1,6 +1,8 @@
 filetype plugin on
 filetype indent on
 
+" Show statusbar
+set laststatus=2
 " Just vim
 set nocompatible
 " No toolbar
