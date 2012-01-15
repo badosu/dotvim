@@ -14,6 +14,7 @@ set guioptions-=r
 set guioptions-=b
 
 if (has("gui_running"))
+	" Nice font
 	set guifont=Anonymous\ Pro\ 12
 endif
 
@@ -27,6 +28,16 @@ set numberwidth=1
 set shiftwidth=2
 set tabstop=2
 
+" Get bundles
 call pathogen#infect()
 
 colorscheme jellybeans
+
+nnoremap <silent> <leader>T :TagbarToggle<CR>
+
+" Dbext buffer with nice syntax
+function! DBextPostResult(db_type, buf_nr)
+	if a:db_type == 'MYSQL'
+		set syntax=mysql
+	endif
+endfunction

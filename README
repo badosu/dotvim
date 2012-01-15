@@ -1,2 +1,6 @@
+cd ~/.vim/bundle/command-t
+rake make 
 
-run rake make inside .vim/bundle/command-t
+cd ~/.vim/bundle/command-t/ruby/command-t/
+ruby extconf.rb
+make 
