@@ -44,3 +44,8 @@ endfunction
 
 " support for 256 color regardless of the termname
 set t_Co=256
+
+" completion
+set wildmode=list:longest
+set wildmenu
+set wildignore=*.o,*.obj,*.swp,*~,#*#
