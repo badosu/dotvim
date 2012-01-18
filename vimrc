@@ -5,7 +5,7 @@ filetype indent on
 set laststatus=2
 " Just vim
 set nocompatible
-" No toolbar
+" No fancy stuff
 set guioptions-=T
 set guioptions-=m
 set guioptions-=l
@@ -27,10 +27,13 @@ set numberwidth=1
 " Indentation
 set shiftwidth=2
 set tabstop=2
+" whitespaces, not tabs
+set expandtab
 
 " Get bundles
 call pathogen#infect()
 
+" Nice colorscheme
 colorscheme jellybeans
 
 nnoremap <silent> <leader>T :TagbarToggle<CR>
@@ -42,7 +45,7 @@ function! DBextPostResult(db_type, buf_nr)
 	endif
 endfunction
 
-" support for 256 color regardless of the termname
+" use 256 color regardless of termname
 set t_Co=256
 
 " completion
