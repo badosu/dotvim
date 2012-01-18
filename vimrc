@@ -5,17 +5,18 @@ filetype indent on
 set laststatus=2
 " Just vim
 set nocompatible
-" No fancy stuff
-set guioptions-=T
-set guioptions-=m
-set guioptions-=l
-set guioptions-=L
-set guioptions-=r
-set guioptions-=b
 
+" gui config
 if (has("gui_running"))
 	" Nice font
 	set guifont=Anonymous\ Pro\ 12
+  " No fancy stuff
+  set guioptions-=T
+  set guioptions-=m
+  set guioptions-=l
+  set guioptions-=L
+  set guioptions-=r
+  set guioptions-=b
 endif
 
 " Set linenumbers on
@@ -27,6 +28,7 @@ set numberwidth=1
 " Indentation
 set shiftwidth=2
 set tabstop=2
+
 " whitespaces, not tabs
 set expandtab
 
@@ -36,13 +38,13 @@ call pathogen#infect()
 " Nice colorscheme
 colorscheme jellybeans
 
-nnoremap <silent> <leader>T :TagbarToggle<CR>
-
 " Dbext buffer with nice syntax
 function! DBextPostResult(db_type, buf_nr)
 	if a:db_type == 'MYSQL'
 		set syntax=mysql
-	endif
+  elseif a:db_type == 'SQLSRV'
+    set syntax=sqlserver
+  endif
 endfunction
 
 " use 256 color regardless of termname
