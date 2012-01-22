@@ -9,7 +9,7 @@ set nocompatible
 " gui config
 if (has("gui_running"))
 	" Nice font
-	set guifont=Anonymous\ Pro\ 12
+	set guifont=Anonymous\ Pro\ 14
   " No fancy stuff
   set guioptions-=T
   set guioptions-=m
@@ -51,6 +51,4 @@ endfunction
 set t_Co=256
 
 " completion
-set wildmode=list:longest
-set wildmenu
 set wildignore=*.o,*.obj,*.swp,*~,#*#
