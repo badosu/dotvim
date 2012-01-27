@@ -32,6 +32,10 @@ set tabstop=2
 " whitespaces, not tabs
 set expandtab
 
+" Display tabs and trailing spaces
+set list
+set listchars=tab:¬\ ,trail:.
+
 " Get bundles
 call pathogen#infect()
 
@@ -52,3 +56,8 @@ set t_Co=256
 
 " completion
 set wildignore=*.o,*.obj,*.swp,*~,#*#
+
+let g:dbext_default_profile_sledge = 'type=MYSQL:user=sledge:passwd=pass2sledge:dbname=sledge_development:extra=-t'
+let g:dbext_default_profile_sledge_tst = 'type=MYSQL:user=sledge:passwd=pass2sledge:dbname=sledge_testing:extra=-t'
+let g:dbext_default_profile_raw_seed = 'type=MYSQL:user=sledge:passwd=pass2sledge:dbname=raw_seed:extra=-t'
+
