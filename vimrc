@@ -8,8 +8,8 @@ set nocompatible
 
 " gui config
 if (has("gui_running"))
-	" Nice font
-	set guifont=Anonymous\ Pro\ 14
+  " Nice font
+  set guifont=Anonymous\ Pro\ 14
   " No fancy stuff
   set guioptions-=T
   set guioptions-=m
@@ -44,8 +44,8 @@ colorscheme jellybeans
 
 " Dbext buffer with nice syntax
 function! DBextPostResult(db_type, buf_nr)
-	if a:db_type == 'MYSQL'
-		set syntax=mysql
+  if a:db_type == 'MYSQL'
+    set syntax=mysql
   elseif a:db_type == 'SQLSRV'
     set syntax=sqlserver
   endif
@@ -56,8 +56,3 @@ set t_Co=256
 
 " completion
 set wildignore=*.o,*.obj,*.swp,*~,#*#
-
-let g:dbext_default_profile_sledge = 'type=MYSQL:user=sledge:passwd=pass2sledge:dbname=sledge_development:extra=-t'
-let g:dbext_default_profile_sledge_tst = 'type=MYSQL:user=sledge:passwd=pass2sledge:dbname=sledge_testing:extra=-t'
-let g:dbext_default_profile_raw_seed = 'type=MYSQL:user=sledge:passwd=pass2sledge:dbname=raw_seed:extra=-t'
-
