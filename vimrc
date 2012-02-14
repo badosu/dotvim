@@ -1,3 +1,5 @@
+let g:Powerline_symbols = 'unicode'
+
 filetype plugin on
 filetype indent on
 
