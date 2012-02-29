@@ -58,3 +58,6 @@ set t_Co=256
 
 " completion
 set wildignore=*.o,*.obj,*.swp,*~,#*#
+
+autocmd FileType ruby highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+autocmd FileType ruby match OverLength /\%80v.\+/
