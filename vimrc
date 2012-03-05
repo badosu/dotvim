@@ -12,12 +12,19 @@ set nocompatible
 if (has("gui_running"))
   " Nice font
   set guifont=Anonymous\ Pro\ 14
-  " No fancy stuff
-  set guioptions-=T
+  "Use text dialogs
+  set guioptions+=c
+  "No menu
   set guioptions-=m
-  set guioptions-=l
+  "No toolbar
+  set guioptions-=T
+  "No fancy tabs
+  set guioptions-=e
+  "No left scrollbar, even in vsplits
   set guioptions-=L
+  "No right scrollbar
   set guioptions-=r
+  "No bottom scrollbar
   set guioptions-=b
 endif
 
@@ -61,3 +68,9 @@ set wildignore=*.o,*.obj,*.swp,*~,#*#
 
 autocmd FileType ruby highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 autocmd FileType ruby match OverLength /\%80v.\+/
+
+let g:dbext_default_profile_seeding = 'type=MYSQL:user=sledge:passwd=pass2sledge:dbname=seeding_development:extra=-t'
+let g:dbext_default_profile_sledge = 'type=MYSQL:user=sledge:passwd=pass2sledge:dbname=sledge_development:extra=-t'
+let g:dbext_default_profile_sledge_tst = 'type=MYSQL:user=sledge:passwd=pass2sledge:dbname=sledge_testing:extra=-t'
+let g:dbext_default_profile_raw_seed = 'type=MYSQL:user=sledge:passwd=pass2sledge:dbname=raw_seed:extra=-t'
+let g:dbext_default_profile_stats_seed = 'type=MYSQL:user=sledge:passwd=pass2sledge:dbname=stats_seed:extra=-t'
