@@ -8,10 +8,13 @@ set laststatus=2
 " Just vim
 set nocompatible
 
+" Incremental search
+set incsearch
+
 " gui config
 if (has("gui_running"))
   " Nice font
-  set guifont=Anonymous\ Pro\ 14
+  set guifont=Inconsolata-g\ 13
   "Use text dialogs
   set guioptions+=c
   "No menu
@@ -49,7 +52,7 @@ set listchars=tab:¬\ ,trail:.
 call pathogen#infect()
 
 " Nice colorscheme
-colorscheme jellybeans
+colorscheme distinguished
 
 " Dbext buffer with nice syntax
 function! DBextPostResult(db_type, buf_nr)
