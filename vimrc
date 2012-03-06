@@ -69,8 +69,21 @@ set wildignore=*.o,*.obj,*.swp,*~,#*#
 autocmd FileType ruby highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 autocmd FileType ruby match OverLength /\%80v.\+/
 
-let g:dbext_default_profile_seeding = 'type=MYSQL:user=sledge:passwd=pass2sledge:dbname=seeding_development:extra=-t'
-let g:dbext_default_profile_sledge = 'type=MYSQL:user=sledge:passwd=pass2sledge:dbname=sledge_development:extra=-t'
-let g:dbext_default_profile_sledge_tst = 'type=MYSQL:user=sledge:passwd=pass2sledge:dbname=sledge_testing:extra=-t'
-let g:dbext_default_profile_raw_seed = 'type=MYSQL:user=sledge:passwd=pass2sledge:dbname=raw_seed:extra=-t'
-let g:dbext_default_profile_stats_seed = 'type=MYSQL:user=sledge:passwd=pass2sledge:dbname=stats_seed:extra=-t'
+augroup NFUCT
+    autocmd!
+    autocmd BufWritePre * call NFUCTset()
+augroup END
+function NFUCTset()
+    if !filereadable(expand('%'))
+        augroup NFUCT
+            autocmd BufWritePost * call NFUCT()
+        augroup END
+    endif
+endfunction
+function NFUCT()
+    augroup NFUCT
+        autocmd!
+        autocmd BufWritePre * call NFUCTset()
+    augroup END
+    CommandTFlush
+endfunction
