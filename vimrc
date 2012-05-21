@@ -72,26 +72,6 @@ set wildignore=*.o,*.obj,*.swp,*~,#*#
 autocmd FileType ruby highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 autocmd FileType ruby match OverLength /\%80v.\+/
 
-" Command-T autoflush
-augroup NFUCT
-    autocmd!
-    autocmd BufWritePre * call NFUCTset()
-augroup END
-function NFUCTset()
-    if !filereadable(expand('%'))
-        augroup NFUCT
-            autocmd BufWritePost * call NFUCT()
-        augroup END
-    endif
-endfunction
-function NFUCT()
-    augroup NFUCT
-        autocmd!
-        autocmd BufWritePre * call NFUCTset()
-    augroup END
-    CommandTFlush
-endfunction
-
 if (has("gui_running"))
   set cursorline
   set cursorcolumn
